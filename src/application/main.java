@@ -7,10 +7,10 @@ public class main {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("digite numero de linhas da matriz: ");
+        System.out.print("line: ");
         int l = sc.nextInt();
 
-        System.out.println("digite numero de colunas da matriz");
+        System.out.print("Column: ");
         int c = sc.nextInt();
 
         int[][] matrix = new int[l][c];
@@ -30,15 +30,25 @@ public class main {
             System.out.println();
         }
 
-        System.out.println("digite numero para encontrar");
+        System.out.print("Number to find: ");
         int find = sc.nextInt();
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 if (matrix[i][j] == find) {
-                    System.out.println("posicao "+i + "," + j);
-                    if(){
-
+                    System.out.println("Position: " + i + "," + j);
+                    //CONFUSO
+                    if (j > 0) {
+                        System.out.println("Left: " + matrix[i][j - 1]);
+                    }
+                    if (i > 0) {
+                        System.out.println("Up: " + matrix[i - 1][j]);
+                    }
+                    if (j < matrix[i].length - 1) {
+                        System.out.println("Right: " + matrix[i][j + 1]);
+                    }
+                    if (i < matrix.length - 1) {
+                        System.out.println("Down: " + matrix[i + 1][j]);
                     }
                 }
             }
